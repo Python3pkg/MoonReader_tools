@@ -1,9 +1,8 @@
 import abc
 
 
-class BaseParser(object):
+class BaseParser(object, metaclass=abc.ABCMeta):
     """Base class for every parser"""
-    __metaclass__ = abc.ABCMeta
 
     @abc.abstractmethod
     def from_text(self, text):

@@ -74,7 +74,7 @@ class Book(object):
         if isinstance(note, Note):
             self._notes = list(chain)
         elif isinstance(note, dict):
-            self._notes = list(map(lambda x: Note.from_dict(x), chain))
+            self._notes = list([Note.from_dict(x) for x in chain])
         else:
             raise TypeError("Unknown object to construct note from:"
                             " {}".format(type(note)))

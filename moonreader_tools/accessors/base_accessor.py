@@ -1,9 +1,7 @@
 import abc
 
 
-class BaseNoteAccessor(object):
-    __metaclass__ = abc.ABCMeta
-
+class BaseNoteAccessor(object, metaclass=abc.ABCMeta):
     @abc.abstractmethod
     def notes_to_file(self, notes, filename):
         pass

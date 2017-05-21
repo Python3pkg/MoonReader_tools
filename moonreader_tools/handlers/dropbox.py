@@ -1,6 +1,6 @@
 import logging
 
-import dropbox
+from . import dropbox
 
 from .drobpox_utils import (
     filepaths_from_metadata,

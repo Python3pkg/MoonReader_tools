@@ -60,10 +60,8 @@ class Note(object):
         return self.__repr__()
 
 
-class AbstractNote(object):
+class AbstractNote(object, metaclass=abc.ABCMeta):
     """Abstract class for all other note parsers"""
-
-    __metaclass__ = abc.ABCMeta
 
     CROSSED = 0b010
     MARKER = 0b0
@@ -252,7 +250,7 @@ class PDFNote(AbstractNote):
 class FB2Note(AbstractNote):
     """Class, used to store and parse notes in the FB2 format"""
 
-    POSITION, LEN, NAME = range(3)
+    POSITION, LEN, NAME = list(range(3))
 
     NOTE_SCHEME = [
         # position, len, name
